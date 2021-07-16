@@ -43,7 +43,6 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $storeData = $request->validate([
-            'nome' => 'required|exists:App\Models\User,nome',
             'user_id' => 'required|exists:App\Models\User,id',
             'client_id' => 'required|exists:App\Models\Client,id',
             'project_id' => 'required|exists:App\Models\Project,id', 
@@ -93,7 +92,6 @@ class OrderController extends Controller
     {
         
         $updateData = $request->validate([
-            'nome' => 'required|exists:App\Models\User,nome',
             'user_id' => 'required|exists:App\Models\User,id',
             'client_id' => 'required|exists:App\Models\Client,id',
             'project_id' => 'required|exists:App\Models\Project,id',
