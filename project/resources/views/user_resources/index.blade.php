@@ -60,8 +60,8 @@
                                 <td class="px-6 py-4 whitespace-nowrap">{{$users->email}}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{$users->mansione}}</td>
                                 <td class="text-center">
-                                <a href="{{ route('orders.edit', $users->id)}}" class="btn btn-outline-dark btn-sm">Edit</a>
-                                <form action="{{ route('orders.destroy', $users->id)}}" method="post" style="display: inline-block">
+                                <a href="{{ route('users.edit', $users->id)}}" class="btn btn-outline-dark btn-sm">Edit</a>
+                                <form action="{{ route('users.destroy', $users->id)}}" method="post" style="display: inline-block">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-outline-danger btn-sm" type="submit">Delete</button>

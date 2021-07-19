@@ -21,28 +21,46 @@
     <div class="mx-auto" style="background-color: white;">
         <div class="btn-group-vertical" style="margin: 25px;">
             <div class="mx-auto">
-                <?xml version="1.0" standalone="no"?>
-                <!DOCTYPE svg
-                    PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="200.000000pt" height="200.000000pt"
-                    viewBox="0 0 200.000000 200.000000" preserveAspectRatio="xMidYMid meet">
-                    <g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)" fill="#000000"
-                        stroke="none">
-                        <path d="M1530 1398 c0 -2 -7 -41 -15 -88 -8 -47 -15 -86 -15 -87 0 -2 36 -3
-                            80 -3 78 0 80 -1 75 -22 -3 -13 -23 -138 -45 -278 -22 -140 -43 -267 -46 -283
-                            l-6 -27 105 0 105 0 11 68 c81 481 117 708 114 715 -4 6 -363 11 -363 5z" />
-                        <path d="M363 1175 c-99 -30 -182 -101 -229 -195 -37 -72 -39 -173 -6 -236 85
-                            -164 322 -184 478 -42 58 53 99 121 112 185 7 36 10 38 52 41 55 4 80 25 80
-                            67 0 41 -16 55 -61 55 -39 0 -49 -11 -49 -55 0 -39 -17 -37 -23 3 -13 75 -78
-                            147 -164 178 -48 17 -135 17 -190 -1z" />
-                        <path d="M972 1150 c20 -17 42 -46 48 -65 l12 -35 87 0 88 0 10 60 c5 33 7 62
-                            5 65 -3 3 -69 5 -146 5 l-141 0 37 -30z" />
-                        <path d="M1244 1163 c9 -21 165 -273 181 -291 9 -10 17 21 37 140 14 84 24
-                            156 21 161 -2 4 -58 7 -125 7 -109 0 -120 -2 -114 -17z" />
-                        <path d="M996 895 c-41 -69 -99 -98 -206 -103 l-87 -4 -13 -85 c-7 -46 -10
-                            -86 -8 -89 3 -2 162 -3 355 -2 l350 3 -101 163 -101 162 -81 0 -82 0 -26 -45z
-                            m174 -92 c0 -71 -4 -73 -101 -73 -48 0 -90 3 -92 8 -2 4 0 26 5 50 l9 42 90 0
-                            89 0 0 -27z" />
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="300" height="300"
+                    version="1.1"
+                    style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                    viewBox="0 0 17770 7846" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <defs>
+                        <style type="text/css">
+                            <![CDATA[
+                            .fil2 {
+                                fill: #2B2A29
+                            }
+
+                            .fil1 {
+                                fill: #E31E24
+                            }
+
+                            .fil0 {
+                                fill: #FEFEFE
+                            }
+
+                            ]]>
+                        </style>
+                    </defs>
+                    <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer" />
+                        <polygon class="fil0"
+                            points="2906,2162 13748,2162 13831,1741 15829,1741 15829,7803 2906,7803 " />
+                        <path class="fil1"
+                            d="M6145 4683l242 -1260 579 0c0,0 600,-21 500,559 -88,526 -320,701 -800,701 -381,0 -521,0 -521,0z" />
+                        <ellipse class="fil2" transform="matrix(1.53163 -0 -0.171302 1.05476 3085.76 4934.42)" rx="1991"
+                            ry="2761" />
+                        <ellipse class="fil1" transform="matrix(0.754937 -0 -0.0844345 0.525541 2996.44 4934.42)"
+                            rx="1991" ry="2761" />
+                        <polygon class="fil2" points="14111,0 17770,0 16489,7803 14408,7803 15384,1743 13811,1741 " />
+                        <path class="fil1"
+                            d="M5645 7823l300 -1842c0,0 858,0 960,0 102,0 302,-18 302,-18l-302 1860 -1260 0z" />
+                        <path class="fil2"
+                            d="M10246 7823l-3341 0 302 -1860c0,0 1418,-58 1799,-1420l1761 0 -147 1080 -1832 0 -160 940 1827 0 -209 1260z" />
+                        <path class="fil2" d="M11148 2162l-200 1261 -1802 0c0,0 38,-984 -1159,-1261l3161 0z" />
+                        <polygon class="fil1" points="11146,2162 13745,2162 13206,5465 " />
+                        <polygon class="fil1" points="10246,7823 10767,4543 12787,7823 " />
                     </g>
                 </svg>
 

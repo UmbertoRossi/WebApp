@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ClientRequest;
 use App\Models\Client;
 use Illuminate\Http\Request;
 
@@ -32,15 +33,9 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClientRequest $request)
     {
-        //$storeData = 0;
-        //dd($request, $storeData);
-        $storeData = $request->validate([
-            'ragioneSociale' => 'required|max:255',
-            'partitaIva' => 'required|max:255',
-            'telefono' => 'required|numeric',
-        ]);
+        $storeData = $request->validated();
         $client = Client::create($storeData);
         return redirect('/clients')->with('completed', 'Client has been saved!');
     }
@@ -71,14 +66,10 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ClientRequest $request, $id)
     {
 
-        $updateData = $request->validate([
-            'ragioneSociale' => 'required|max:255',
-            'partitaIva' => 'required|max:255',
-            'telefono' => 'required|numeric',
-        ]);
+        $updateData = $request->validated();
         Client::whereId($id)->update($updateData);
         return redirect('/clients')->with('completed', 'Client has been updated');
     }

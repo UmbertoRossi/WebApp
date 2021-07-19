@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OrderRequest;
 use App\Models\User;
 use App\Models\Client;
 use App\Models\Order;
@@ -40,20 +41,9 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OrderRequest $request)
     {
-        $storeData = $request->validate([
-            'user_id' => 'required|exists:App\Models\User,id',
-            'client_id' => 'required|exists:App\Models\Client,id',
-            'project_id' => 'required|exists:App\Models\Project,id', 
-            'titolo' => 'required|max:255',
-            'data' => 'required|max:255',
-            'ora' => 'required|max:255',
-            'descrizione' => 'required|max:255',
-        ]);
-
-        //dd($storeData);
-
+        $storeData = $request->validated();
         $order = Order::create($storeData);
         return redirect('/orders')->with('completed', 'Order has been saved!');
     }
@@ -88,18 +78,10 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(OrderRequest $request, $id)
     {
         
-        $updateData = $request->validate([
-            'user_id' => 'required|exists:App\Models\User,id',
-            'client_id' => 'required|exists:App\Models\Client,id',
-            'project_id' => 'required|exists:App\Models\Project,id',
-            'titolo' => 'required|max:255',
-            'data' => 'required|max:255',
-            'ora' => 'required|max:255',
-            'descrizione' => 'required|max:255',
-        ]);
+        $updateData = $request->validated();
         Order::whereId($id)->update($updateData);
         return redirect('/orders')->with('completed', 'Order has been updated');
     }

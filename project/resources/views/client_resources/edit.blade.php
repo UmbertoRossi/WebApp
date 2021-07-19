@@ -39,7 +39,7 @@
                 <label for="telefono">Telefono</label>
                 <input type="tel" class="form-control" name="telefono" value="{{ $client->telefono }}" />
             </div>
-            <button type="submit" class="btn btn-block btn-danger">Update</button>
+            <button type="submit" class="btn btn-block btn-outline-dark">Update</button>
         </form>
     </div>
 </div>

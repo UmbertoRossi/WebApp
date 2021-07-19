@@ -12,7 +12,7 @@
 </style>
 <div class="card push-top">
     <div class="card-header">
-        Add Order
+        Aggiungi ordine
     </div>
     <div class="card-body">
         @if ($errors->any())
@@ -32,7 +32,7 @@
         </select> --}}
 
         <form method="post" action="{{ route('orders.store') }}" action="{{ route('orders.create')}}">
-            <label for="user_id">User ID</label>
+            <label for="user_id">ID Impiegato</label>
             <div class="form-group">
                 <select name="user_id">
                     <option selected></option>
@@ -41,7 +41,7 @@
                     @endforeach
                 </select>
             </div>
-            <label for="client_id">Client ID</label>
+            <label for="client_id">ID Cliente</label>
             <div class="form-group">
                 <select name="client_id">
                     <option></option>
@@ -50,7 +50,7 @@
                     @endforeach
                 </select>
             </div>
-            <label for="project_id">Project ID</label>
+            <label for="project_id">ID Progetto</label>
             <div class="form-group">
                 <select name="project_id">
                     <option selected></option>
@@ -67,19 +67,19 @@
             <div class="form-group">
                 @csrf
                 <label for="data">Data</label>
-                <input type="text" class="form-control" name="data" />
+                <input type="date" class="form-control" name="data" />
             </div>
             <div class="form-group">
                 @csrf
                 <label for="ora">Ora</label>
-                <input type="text" class="form-control" name="ora" />
+                <input type="time" class="form-control" name="ora" />
             </div>
             <div class="form-group">
                 @csrf
                 <label for="descrizione">Descrizione</label>
                 <input type="text" class="form-control" name="descrizione" />
             </div>
-            <button type="submit" class="btn btn-block btn-danger">Create Order</button>
+            <button type="submit" class="btn btn-block btn-outline-dark">Crea ordine</button>
         </form>
     </div>
 </div>

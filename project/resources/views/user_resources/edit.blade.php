@@ -57,7 +57,7 @@
                 <label for="mansione">Mansione</label>
                 <input type="text" class="form-control" name="mansione" value="{{ $user->mansione }}" />
             </div>
-            <button type="submit" class="btn btn-block btn-danger">Update</button>
+            <button type="submit" class="btn btn-block btn-outline-dark">Update</button>
         </form>
     </div>
 </div>

@@ -50,7 +50,7 @@
                 <label for="mansione">Mansione</label>
                 <input type="text" class="form-control" name="mansione" />
             </div>
-            <button type="submit" class="btn btn-block btn-danger">Create User</button>
+            <button type="submit" class="btn btn-block btn-outline-dark">Create User</button>
         </form>
     </div>
 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -34,15 +35,9 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        $storeData = $request->validate([
-            'nome' => 'required|max:255',
-            'cognome' => 'required|max:255',
-            'password' => 'required|max:255',
-            'email' => 'required|max:255',
-            'mansione' => 'required|max:255',
-        ]);
+        $storeData = $request->validated();
         $user = User::create($storeData);
         return redirect('/users')->with('completed', 'User has been saved!');
     }
@@ -77,15 +72,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserRequest $request, $id)
     {
-        $updateData = $request->validate([
-            'nome' => 'required|max:255',
-            'cognome' => 'required|max:255',
-            'password' => 'required|max:255',
-            'email' => 'required|max:255',
-            'mansione' => 'required|max:255',
-        ]);
+        $updateData = $request->validated();
         User::whereId($id)->update($updateData);
         return redirect('/users')->with('completed', 'User has been updated');
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -34,11 +35,9 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProjectRequest $request)
     {
-        $storeData = $request->validate([
-            'nome' => 'required|max:255',
-        ]);
+        $storeData = $request->validated();
         $project = Project::create($storeData);
         return redirect('/projects')->with('completed', 'Project has been saved!');
     }
@@ -73,11 +72,9 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProjectRequest $request, $id)
     {
-        $updateData = $request->validate([
-            'nome' => 'required|max:255',
-        ]);
+        $updateData = $request->validated();
         Project::whereId($id)->update($updateData);
         return redirect('/projects')->with('completed', 'Project has been updated');
     }
