@@ -25,41 +25,47 @@
         </div><br />
         @endif
         <form method="post" action="{{ route('orders.update', $order->id) }}">
+            <label for="user_id">ID Impiegato</label>
+            <div class="form-group">
+                <select name="user_id">
+                    <option selected></option>
+                    @foreach ($users as $user)
+                    <option value="{{$user->id}}">ID {{$user->id}} {{$user->nome}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <label for="client_id">ID Cliente</label>
+            <div class="form-group">
+                <select name="client_id">
+                    <option></option>
+                    @foreach ($clients as $client)
+                    <option value="{{$client->id}}">ID {{$client->id}} {{$client->ragioneSociale}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <label for="project_id">ID Progetto</label>
+            <div class="form-group">
+                <select name="project_id">
+                    <option selected></option>
+                    @foreach ($projects as $project)
+                    <option value="{{$project->id}}">ID {{$project->id}} {{$project->nome}}</option>
+                    @endforeach
+                </select>
+            </div>
             <div class="form-group">
                 @csrf
-                @method('PATCH')
-                <label for="user_id">Employee_ID</label>
-                <input type="text" class="form-control" name="user_id" value="{{ $order->user_id }}" />
-            </div>
-            <div>
-                @csrf
-                @method('PATCH')
-                <label for="client_id">Client_ID</label>
-                <input type="text" class="form-control" name="client_id" value="{{ $order->client_id }}" />
-            </div>
-            <div>
-                @csrf
-                @method('PATCH')
-                <label for="project_id">Project_ID</label>
-                <input type="text" class="form-control" name="project_id" value="{{ $order->project_id }}" />
-            </div>
-            <div>
-                @csrf
-                @method('PATCH')
                 <label for="titolo">Titolo</label>
-                <input type="text" class="form-control" name="titolo" value="{{ $order->titolo }}" />
+                <input type="text" class="form-control" name="titolo" />
             </div>
-            <div>
+            <div class="form-group">
                 @csrf
-                @method('PATCH')
                 <label for="data">Data</label>
-                <input type="text" class="form-control" name="data" value="{{ $order->data }}" />
+                <input type="date" class="form-control" name="data" />
             </div>
-            <div>
+            <div class="form-group">
                 @csrf
-                @method('PATCH')
                 <label for="ora">Ora</label>
-                <input type="text" class="form-control" name="ora" value="{{ $order->ora }}" />
+                <input type="time" class="form-control" name="ora" />
             </div>
             <div>
                 @csrf

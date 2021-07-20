@@ -59,11 +59,14 @@
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
                             @foreach ($order as $orders)
+                            @foreach ($users as $user)
+                            @foreach ($clients as $client)
+                            @foreach ($projects as $project)
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap" >{{$orders->id}}</td>
-                                <td class="px-6 py-4 whitespace-nowrap">{{$orders->user_id}} {{$orders->nome}}</td>
-                                <td class="px-6 py-4 whitespace-nowrap">{{$orders->client_id}}</td>
-                                <td class="px-6 py-4 whitespace-nowrap">{{$orders->project_id}}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">{{$orders->user_id}} {{$user->nome}}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">{{$orders->client_id}} {{$client->ragioneSociale}}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">{{$orders->project_id}} {{$project->nome}}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{$orders->titolo}}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{$orders->data}}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{$orders->ora}}</td>
@@ -77,6 +80,9 @@
                                 </form>
                                 </td>
                             </tr>
+                            @endforeach
+                            @endforeach
+                            @endforeach
                             @endforeach
                         </tbody>
                     </table>

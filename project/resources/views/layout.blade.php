@@ -77,8 +77,10 @@
                     <a class="nav-link ml-auto" href="/login">Login</a>
                 @endguest
                 @auth
+                    <span class="ml-auto">Buon lavoro, {{auth()->user()->nome}}!</span>
                     <a class="nav-link ml-auto" href="/logout">Logout</a>
                 @endauth
+                
             </div>
         </div>
     </nav>

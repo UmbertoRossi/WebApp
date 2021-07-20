@@ -19,7 +19,10 @@ class OrderController extends Controller
     public function index()
     {
         $order = Order::all();
-        return view('order_resources/index', compact('order'));
+        $users = User::all();
+        $clients = Client::all();
+        $projects = Project::all();
+        return view('order_resources/index', compact('order','users','clients','projects'));
     }
 
     /**
@@ -68,7 +71,10 @@ class OrderController extends Controller
     public function edit($id)
     {
         $order = Order::findOrFail($id);
-        return view('order_resources/edit', compact('order'));
+        $users = User::all();
+        $clients = Client::all();
+        $projects = Project::all();
+        return view('order_resources/edit', compact('order','users','clients','projects'));
     }
 
     /**
