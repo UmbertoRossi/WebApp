@@ -7,13 +7,13 @@
 
 </style>
 @if (session()->has('success'))
-    <div class="bg-red-500 rounded-xl py-2 px-4 fixed">
-        <p>
-            {{session('success')}}
-        </p>
-    </div>
+<div class="bg-red-500 rounded-xl py-2 px-4 fixed">
+    <p>
+        {{session('success')}}
+    </p>
+</div>
 @else
-    
+
 @endif
 <div class="mx-auto">
     <div class="btn-group-vertical" style="margin: 25px;">
@@ -65,7 +65,7 @@
         </div>
         <div class="mx-auto " style="margin-top:fit-content; max-width: 50%;">
             <h4 class="position-relative" style="margin-top: 300px; ">L'azienda</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate enim in blandit sagittis.
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate enim in blandit sagittis.
                 Sed cursus, est at pretium interdum, dolor tortor imperdiet tortor, quis volutpat elit orci ut
                 neque. Praesent dictum velit libero, ac maximus mi feugiat at. Maecenas semper arcu ac lacinia
                 lobortis. Sed metus orci, luctus sit amet auctor at, semper sit amet libero. Ut posuere iaculis
@@ -76,6 +76,9 @@
                 lorem id, lobortis arcu.</p>
 
         </div>
+            <form action="/uploadImg" class="dropzone mx-auto mt-5" id="imageUpload">
+            @csrf
+            </form>
         <div class="mx-auto text-muted" style="margin-top:60px; margin-bottom:-60px">
             <p>Open1; Via esempio esempio, 00<br> +39 0000000000; email@example.com</p>
         </div>

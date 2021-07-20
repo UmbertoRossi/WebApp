@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>webApp</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{url('/js/dropzone-5.7.0/dist/dropzone.css')}}">
+    <script src={{url('/js/dropzone-5.7.0/dist/dropzone.js')}}></script>
 </head>
 
 <body>
@@ -91,6 +92,13 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" type="text/js"></script>
+    <script>
+        Dropzone.options.imageUpload = {
+            paramName:"imageFile",
+            maxFileSize : 1,
+            acceptedFiles:'.jpeg,.jpg,.png,.gif'
+        };
+    </script>
 </body>
 
 </html>

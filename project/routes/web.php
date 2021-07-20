@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\DropzoneController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SessionController;
@@ -37,4 +38,7 @@ Route::resource('users', UserController::class)->middleware('auth');
 Route::get('register', [UserController::class, 'create'])->middleware('auth');
 
 Route::get('logout',[SessionController::class, 'destroy'])->middleware('auth');
+
 Route::post('login', [SessionController::class, 'store'])->middleware('guest');
+
+Route::post('uploadImg',[DropzoneController::class, 'store']);
