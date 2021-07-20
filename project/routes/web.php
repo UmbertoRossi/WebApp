@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,10 +22,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('clients', ClientController::class);
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
 
-Route::resource('projects', ProjectController::class);
+Route::resource('clients', ClientController::class)->middleware('auth');
 
-Route::resource('orders', OrderController::class);
+Route::resource('projects', ProjectController::class)->middleware('auth');
 
-Route::resource('users', UserController::class);
+Route::resource('orders', OrderController::class)->middleware('auth');
+
+Route::resource('users', UserController::class)->middleware('auth');
+
+Route::get('register', [UserController::class, 'create'])->middleware('auth');
+
+Route::get('logout',[SessionController::class, 'destroy'])->middleware('auth');
+Route::post('login', [SessionController::class, 'store'])->middleware('guest');

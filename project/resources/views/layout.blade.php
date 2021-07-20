@@ -73,6 +73,12 @@
                     <li class="nav-item"><a class="nav-link" href="/users">Utenti</a></li>
                     <li class="nav-item"><a class="nav-link" href="/orders">Ordini</a></li>
                 </ul>
+                @guest
+                    <a class="nav-link ml-auto" href="/login">Login</a>
+                @endguest
+                @auth
+                    <a class="nav-link ml-auto" href="/logout">Logout</a>
+                @endauth
             </div>
         </div>
     </nav>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -27,6 +28,7 @@ class UserController extends Controller
     public function create()
     {
         return view('user_resources/create');
+
     }
 
     /**
@@ -38,8 +40,14 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         $storeData = $request->validated();
+
         $user = User::create($storeData);
-        return redirect('/users')->with('completed', 'User has been saved!');
+
+        Auth::login($user);
+
+        session()->flash('success', ' Account creato con successo');
+
+        return redirect('/');
     }
 
     /**

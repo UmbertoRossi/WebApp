@@ -43,13 +43,13 @@
                 @csrf
                 @method('PATCH')
                 <label for="password">Password</label>
-                <input type="text" class="form-control" name="password" value="{{ $user->password }}" />
+                <input type="password" class="form-control" name="password" value="{{ $user->password }}" />
             </div>
             <div class="form-group">
                 @csrf
                 @method('PATCH')
                 <label for="email">Email</label>
-                <input type="text" class="form-control" name="email" value="{{ $user->email }}" />
+                <input type="email" class="form-control" name="email" value="{{ $user->email }}" />
             </div>
             <div class="form-group">
                 @csrf
