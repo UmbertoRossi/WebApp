@@ -6,6 +6,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,12 +34,12 @@ Route::resource('projects', ProjectController::class)->middleware('auth');
 
 Route::resource('orders', OrderController::class)->middleware('auth');
 
-Route::resource('users', UserController::class)->middleware('auth');
+Route::resource('users', UserController::class);
+
+Route::resource('images', DropzoneController::class)->middleware('auth');
 
 Route::get('register', [UserController::class, 'create'])->middleware('auth');
 
 Route::get('logout',[SessionController::class, 'destroy'])->middleware('auth');
 
 Route::post('login', [SessionController::class, 'store'])->middleware('guest');
-
-Route::post('uploadImg',[DropzoneController::class, 'store']);

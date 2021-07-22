@@ -76,9 +76,6 @@
                 lorem id, lobortis arcu.</p>
 
         </div>
-            <form action="/uploadImg" class="dropzone mx-auto mt-5" id="imageUpload">
-            @csrf
-            </form>
         <div class="mx-auto text-muted" style="margin-top:60px; margin-bottom:-60px">
             <p>Open1; Via esempio esempio, 00<br> +39 0000000000; email@example.com</p>
         </div>

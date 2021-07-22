@@ -23,7 +23,7 @@
                 @endforeach
             </ul>
         </div><br />
-        @endif
+        @endif  
         <form method="post" action="{{ route('clients.update', $client->id) }}">
             <div class="form-group">
                 @csrf
@@ -42,5 +42,28 @@
             <button type="submit" class="btn btn-block btn-outline-dark">Update</button>
         </form>
     </div>
+    <form action="{{ route('images.store') }}" class="dropzone mx-auto mt-5" id="imageUpload">
+        @csrf
+    </form>
+    <script>
+        Dropzone.options.imageUpload = {
+            paramName:"imageFile",
+            maxFileSize : 1,
+            acceptedFiles:'.jpeg,.jpg,.png,.gif'
+        };
+    </script>
+{{-- Database
+nome 
+id immagine
+id cliente
+indirizzo immagine
+size immagine
+
+
+display dell'immagine nella pagina ^
+
+modello->controller->database
+
+immagini locali  --}}
 </div>
 @endsection

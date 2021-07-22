@@ -7,10 +7,10 @@
 </style>
 <a class="btn btn-outline-dark" href="clients/create">Crea nuovo cliente</a>
 <div class="push-top">
-    @if(session()->get('success'))
+    @if(session()->get('completed'))
     <div class="alert alert-success">
-        {{ session()->get('success') }}
-    </div><br />
+        {{ session()->get('completed') }}
+    </div><br>
     @endif
     <div class="flex flex-col">
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
