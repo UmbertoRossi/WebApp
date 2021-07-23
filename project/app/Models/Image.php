@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
+use Facade\FlareClient\Stacktrace\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class Image extends Model
@@ -29,16 +31,20 @@ class Image extends Model
 
     public static function destroyImage()
     {
-        $image_path = 'App\public\imagesFolder';
-        $files = Storage::files($image_path);
-        foreach ($files as $file) {
-            DB::table('images')->where('status', '=', false)->delete();
+        $image_path = public_path('imagesFolder');
+        $query = DB::table('images')->where('status', '=', false);
+        $orphans = $query->get();
+        foreach ($orphans as $orphan) {
+            $file_path = $image_path.'\\'.$orphan->imageName;
+            unlink($file_path);
         }
-/* 
-        $uselessStatus = DB::table('images')
+
+        /* $query->delete(); */
+
+         DB::table('images')
         ->where('status', '=', false)
-        ->delete();
-        return $uselessStatus; */
+        ->delete();  
+         
     }
 }
 

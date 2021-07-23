@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ClientRequest;
 use App\Models\Client;
 use App\Models\Image;
-use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
