@@ -29,7 +29,7 @@ class Image extends Model
         return $updatedStatus;
     }
 
-    public static function destroyImage()
+    public static function destroyOrphans()
     {
         $image_path = public_path('imagesFolder');
         $query = DB::table('images')->where('status', '=', false);
