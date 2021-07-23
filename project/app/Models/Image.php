@@ -39,11 +39,11 @@ class Image extends Model
             unlink($file_path);
         }
 
-        /* $query->delete(); */
+        $query->delete(); 
 
-         DB::table('images')
+         /* DB::table('images')
         ->where('status', '=', false)
-        ->delete();  
+        ->delete();   */
          
     }
 }
