@@ -58,6 +58,7 @@ class ClientController extends Controller
     public function edit($id)
     {
         $client = Client::findOrFail($id);
+        Image::destroyImage();
         return view('client_resources/edit', compact('client'));
     }
     /**
