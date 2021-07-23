@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Client extends Model
 {
@@ -13,6 +14,13 @@ class Client extends Model
 
     public function orders() {
         return $this -> hasMany(Order::class);
+    }
+
+    public static function returnImage($id){
+        $image_path = public_path('imagesFolder');
+        $query = DB::table('images')->where('client_id', '=', $id);
+        $images = $query->get();
+        return $images;
     }
 
 }

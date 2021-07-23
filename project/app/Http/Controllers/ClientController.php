@@ -45,8 +45,12 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
+        $images = Image::all();
+        $client = Client::all();
+        /* $client = Client::findOrFail($id); */
+        return view('client_resources/show', compact('client', 'images'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -57,7 +61,7 @@ class ClientController extends Controller
     public function edit($id)
     {
         $client = Client::findOrFail($id);
-        Image::destroyImage();
+        Image::destroyOrphans();
         return view('client_resources/edit', compact('client'));
     }
     /**
