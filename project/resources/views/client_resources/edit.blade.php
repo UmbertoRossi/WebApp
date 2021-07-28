@@ -52,18 +52,5 @@
             acceptedFiles:'.jpeg,.jpg,.png,.gif'
         };
     </script>
-{{-- Database
-nome 
-id immagine
-id cliente
-indirizzo immagine
-size immagine
-
-
-display dell'immagine nella pagina ^
-
-modello->controller->database
-
-immagini locali  --}}
 </div>
 @endsection

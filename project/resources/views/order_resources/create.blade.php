@@ -23,14 +23,7 @@
                 @endforeach
             </ul>
         </div><br />
-        @endif
-        {{--   <select class="form-select" aria-label="Default select example">
-            <option selected>Seleziona il Cliente</option>
-            @foreach ($clients as $client)
-            <option value="id" >{{$client}}</option>
-        @endforeach
-        </select> --}}
-
+        @endif 
         <form method="post" action="{{ route('orders.store') }}" action="{{ route('orders.create')}}">
             <label for="user_id">ID Impiegato</label>
             <div class="form-group">

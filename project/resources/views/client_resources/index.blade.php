@@ -39,10 +39,6 @@
                                     class="px-18 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Immagini
                                 </th>
-                                <th scope="col"
-                                    class="px-18 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-
-                                </th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
@@ -50,10 +46,10 @@
                             <tr>
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $clients->id }}</td>
                                 <td class="px-6 py-4 whitespace-nowrap">{{ $clients->ragioneSociale }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap">{{$clients->partitaIva}}</td>
-                                <td class="px-6 py-4 whitespace-nowrap">{{$clients->telefono}}</td>
-                                <td class="px-6 py-4 whitespace-nowrap">{{$clients->returnImage()}}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">{{ $clients->partitaIva }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">{{ $clients->telefono }}</td>
                                 <td class="text-center">
+                                    <a href="{{ route('clients.show', $clients->id) }}" class="btn btn-outline-dark btn-sm">Mostra dettagli</a>
                                     <a href="{{ route('clients.edit', $clients->id) }}" class="btn btn-outline-dark btn-sm">Edit</a>
                                     <form action="{{ route('clients.destroy', $clients->id) }}" method="post"
                                         style="display: inline-block">

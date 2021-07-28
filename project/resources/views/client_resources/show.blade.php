@@ -1,15 +1,3 @@
-{{-- @extends('layout')
-@section('content')
-@php
-    $flag=0;
-    foreach ($images as $image) {
-        $file_path = $image_path . '\\' . $image->imageName;
-        $imagesFilePath=[$flag=>$file_path];
-        $flag = $flag + 1;
-    }
-@endphp
-<img src="{{$imagesFilePath[0]}}" alt="">
-@endsection --}}
 @extends('layout')
 @section('content')
 <style>
@@ -26,34 +14,23 @@
                         <thead class="bg-gray-50">
                             <tr>
                                 <th scope="col"
-                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    ID immagine
+                                    class="px-18 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Nome Immagine
                                 </th>
                                 <th scope="col"
                                     class="px-18 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Immagine
                                 </th>
-                                <th scope="col"
-                                    class="px-18 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Nome immagine
-                                </th>
-                                <th scope="col"
-                                    class="px-18 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    ID cliente
-                                </th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white divide-y divide-gray-200"action = "{{route('clients.show')}}">
+                        <tbody class="bg-white divide-y divide-gray-200" action="{{route('clients.show', $client->id)}}">
                             @foreach ($images as $image)
                             <tr>
-                                <td class="px-6 py-4 whitespace-nowrap">{{$image->imageId}}</td>
+                                <td class="px-6 py-4 whitespace-nowrap" >{{$image->client_id}} {{$image->imageName}}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <img src="{{asset($image->mypath())}}" style="width:50px;height:50px;"></td>
                             </tr>
-                            @endforeach 
-                            @foreach ($client as $clients)
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap">{{$clients->id}}</td>
-                            </tr>
-                            @endforeach
+                            @endforeach  
                         </tbody>
                     </table>
                 </div>
@@ -61,5 +38,4 @@
         </div>
     </div>
 </div>
-
 @endsection

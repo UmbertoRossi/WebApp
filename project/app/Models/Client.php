@@ -16,11 +16,11 @@ class Client extends Model
         return $this -> hasMany(Order::class);
     }
 
-    public static function returnImage($id){
+   /*  public static function returnImage($id){
         $image_path = public_path('imagesFolder');
         $query = DB::table('images')->where('client_id', '=', $id);
         $images = $query->get();
         return $images;
-    }
+    } */
 
 }

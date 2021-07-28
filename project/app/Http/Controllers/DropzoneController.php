@@ -78,7 +78,8 @@ class DropzoneController extends Controller
      */
     public function showClientId($clientId)
     {
-        Image::find($clientId);
+       $images = Image::find($clientId);
+       return view('client_resources/show', compact('images'));
     }
 
     /**

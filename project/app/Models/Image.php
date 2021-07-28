@@ -15,15 +15,21 @@ class Image extends Model
 
     protected $fillable = ['imageId','imageName','extension','userId','client_id','status','imageSizeMb'];
 
+    public function mypath() {
+        $image_path = 'imagesFolder';
+        $mypath = $image_path.'\\'.$this->imageName;
+        return $mypath;
+    }
+
     public function orders()
     {
         return $this->belongsTo(User::class);
     }
 
-    public static function setStatus()
+    public static function setStatusToTrue($id)
     {
         $updatedStatus = DB::table('images')
-        ->where('client_id', '=', 1)
+        ->where('client_id', '=', $id)
         ->where('status', '=', false)
         ->update(['status' => true]);
         return $updatedStatus;
