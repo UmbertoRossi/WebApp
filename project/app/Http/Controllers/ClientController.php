@@ -45,12 +45,13 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        $images = Image::all();
-        $client = Client::all();
-        /* $client = Client::findOrFail($id); */
-        return view('client_resources/show', compact('client', 'images'));
+        $image = Client::findOrFail($id);
+        $images = Image::all(); 
+        $client = Client::findOrFail($id);
+        $clients = Client::all();
+        return view('client_resources/show', compact('client', 'image', 'images', 'clients'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -74,7 +75,7 @@ class ClientController extends Controller
     public function update(ClientRequest $request, $id)
     {
         $updateData = $request->validated();
-        Image::setStatus();
+        Image::setStatusToTrue($id);
         Client::whereId($id)->update($updateData);
         return redirect('/clients')->with('completed', 'Client has been updated');
     }
